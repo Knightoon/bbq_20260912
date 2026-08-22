@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>由比ガ浜BBQ 2026 | しおり</title>
+<meta name="theme-color" content="#12233F">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#12233F;
+  --navy-2:#1E3557;
+  --sand:#F7F1E6;
+  --sand-2:#EFE5D5;
+  --ink:#1A2436;
+  --ink-soft:#6B7789;
+  --line:#E2D6C3;
+  --paper:#FFFDF9;
+
+  --sun:#FF7A4D;
+  --sun-deep:#E05A2B;
+  --sea:#2E9DA8;
+  --sea-deep:#1E7580;
+  --dusk:#8A6BC1;
+  --gold:#E8A73C;
+
+  --r:16px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--sand);
+  color:var(--ink);
+  font-family:"Zen Kaku Gothic New",sans-serif;
+  -webkit-font-smoothing:antialiased;
+  padding-bottom:48px;
+}
+a{color:inherit;text-decoration:none}
+.app{max-width:620px;margin:0 auto}
+
+/* ---------- Hero ---------- */
+.hero{
+  background:linear-gradient(175deg,#12233F 0%,#25406B 42%,#8A6BC1 68%,#FF7A4D 100%);
+  color:#fff;
+  padding:30px 20px 34px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;left:0;right:0;bottom:-1px;height:26px;
+  background:var(--sand);
+  clip-path:polygon(0 60%,8% 40%,18% 62%,28% 38%,40% 60%,52% 36%,64% 60%,76% 38%,88% 60%,100% 42%,100% 100%,0 100%);
+}
+.hero .sun{
+  position:absolute;right:26px;top:104px;width:66px;height:66px;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,#FFD9A0,#FF7A4D 70%);
+  box-shadow:0 0 46px rgba(255,150,90,.55);
+}
+.hero .eyebrow{
+  font-family:"Bebas Neue",sans-serif;font-size:14px;letter-spacing:.34em;opacity:.8;
+}
+.hero h1{
+  font-family:"Bebas Neue",sans-serif;
+  font-size:52px;line-height:.92;margin:6px 0 8px;letter-spacing:.02em;
+}
+.hero h1 span{display:block;font-size:22px;letter-spacing:.16em;opacity:.9}
+.hero .jp{font-size:14px;font-weight:500;opacity:.95}
+.hero .meta{
+  display:flex;gap:8px;margin-top:16px;flex-wrap:wrap;position:relative;z-index:2;
+}
+.hero .meta div{
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.28);
+  border-radius:999px;padding:5px 12px;font-size:12px;font-weight:500;
+  backdrop-filter:blur(4px);
+}
+
+/* ---------- Tabs ---------- */
+.tabs{
+  position:sticky;top:0;z-index:60;background:var(--sand);
+  display:flex;gap:7px;padding:11px 14px;overflow-x:auto;
+  border-bottom:1px solid var(--line);scrollbar-width:none;
+}
+.tabs::-webkit-scrollbar{display:none}
+.tabs a{
+  flex:0 0 auto;padding:8px 15px;border-radius:999px;font-size:13px;font-weight:700;
+  background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);white-space:nowrap;
+  transition:.15s;
+}
+.tabs a.active{background:var(--navy);border-color:var(--navy);color:#fff}
+
+main{padding:20px 16px 0}
+.panel{display:none}
+.panel.show{display:block;animation:fade .22s ease}
+@keyframes fade{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+
+.slabel{
+  font-family:"Bebas Neue",sans-serif;letter-spacing:.2em;font-size:14px;color:var(--ink-soft);
+  margin:26px 0 10px;display:flex;align-items:center;gap:10px;
+}
+.slabel::after{content:"";flex:1;height:1px;background:var(--line)}
+.slabel:first-child{margin-top:0}
+
+.card{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--r);
+  padding:16px;margin-bottom:14px;
+}
+.card h3{margin:0 0 8px;font-size:15px;font-weight:900}
+.card p{margin:0;font-size:13.5px;color:var(--ink-soft);line-height:1.75}
+
+/* ---------- Overview nav cards ---------- */
+.navgrid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.navcard{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--r);
+  padding:15px 14px;position:relative;overflow:hidden;
+}
+.navcard .k{font-family:"Bebas Neue",sans-serif;font-size:12px;letter-spacing:.2em;color:var(--ink-soft)}
+.navcard .v{font-size:15px;font-weight:900;margin-top:3px}
+.navcard .d{font-size:11.5px;color:var(--ink-soft);margin-top:4px;line-height:1.6}
+.navcard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px}
+.navcard.c1::before{background:var(--sea)}
+.navcard.c2::before{background:var(--sun)}
+.navcard.c3::before{background:var(--dusk)}
+.navcard.c4::before{background:var(--gold)}
+.navcard .arrow{position:absolute;right:12px;bottom:10px;font-size:13px;color:var(--ink-soft)}
+
+/* summary strip */
+.strip{
+  background:var(--navy);color:#fff;border-radius:var(--r);padding:16px 18px;margin-bottom:16px;
+}
+.strip .row{display:flex;justify-content:space-between;align-items:baseline;padding:7px 0}
+.strip .row+.row{border-top:1px solid rgba(255,255,255,.14)}
+.strip .lab{font-size:12.5px;opacity:.75}
+.strip .val{font-family:"Bebas Neue",sans-serif;font-size:24px;letter-spacing:.03em}
+.strip .val small{font-family:"Zen Kaku Gothic New",sans-serif;font-size:11px;opacity:.7;margin-left:4px}
+
+/* ---------- Timeline ---------- */
+.tl{position:relative;padding-left:64px}
+.tl::before{
+  content:"";position:absolute;left:52px;top:10px;bottom:10px;width:3px;border-radius:2px;
+  background:linear-gradient(to bottom,var(--sea) 0%,var(--sea) 22%,var(--gold) 48%,var(--sun) 72%,var(--dusk) 90%,var(--navy) 100%);
+}
+.stop{position:relative;padding-bottom:22px}
+.stop:last-child{padding-bottom:6px}
+.stop .clock{
+  position:absolute;left:-64px;top:-2px;width:44px;text-align:right;
+  font-family:"Bebas Neue",sans-serif;font-size:17px;letter-spacing:.04em;color:var(--ink);
+}
+.stop .dot{
+  position:absolute;left:-13px;top:4px;width:14px;height:14px;border-radius:50%;
+  background:var(--paper);border:3px solid var(--sea);
+}
+.stop.t-day .dot{border-color:var(--sea)}
+.stop.t-noon .dot{border-color:var(--gold)}
+.stop.t-eve .dot{border-color:var(--sun)}
+.stop.t-dusk .dot{border-color:var(--dusk)}
+.stop.t-night .dot{border-color:var(--navy)}
+.stop.big .dot{width:18px;height:18px;left:-15px;box-shadow:0 0 0 5px rgba(255,122,77,.16)}
+.stop h4{margin:0 0 3px;font-size:15.5px;font-weight:900}
+.stop .sub{font-size:12.5px;color:var(--ink-soft);line-height:1.7}
+.stop ul{margin:7px 0 0;padding-left:17px;font-size:12.5px;color:var(--ink-soft);line-height:1.85}
+.tag{
+  display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:6px;
+  margin-bottom:5px;
+}
+.tag.move{background:#E4F2F4;color:var(--sea-deep)}
+.tag.eat{background:#FFEAE0;color:var(--sun-deep)}
+.tag.buy{background:#FBF0D8;color:#9A6C10}
+.tag.fin{background:#EDE7F7;color:#5F4694}
+
+/* ---------- Cost ---------- */
+.calc{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
+.stepper{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+.stepper .lb{font-size:13px;font-weight:700}
+.stepper .ctrl{display:flex;align-items:center;gap:12px}
+.stepper button{
+  width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--sand-2);
+  font-size:19px;font-weight:700;color:var(--ink);cursor:pointer;line-height:1;
+}
+.stepper button:active{background:var(--line)}
+.stepper .num{font-family:"Bebas Neue",sans-serif;font-size:28px;min-width:44px;text-align:center}
+.result{background:linear-gradient(120deg,var(--sun),var(--sun-deep));color:#fff;border-radius:12px;padding:14px 16px}
+.result .lab{font-size:12px;opacity:.9}
+.result .big{font-family:"Bebas Neue",sans-serif;font-size:38px;line-height:1.05;letter-spacing:.02em}
+.result .note{font-size:11.5px;opacity:.9;margin-top:3px}
+
+.bd{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-bottom:14px}
+.bd .head{background:var(--sand-2);padding:11px 15px;font-size:13.5px;font-weight:900;display:flex;justify-content:space-between}
+.bd .item{display:flex;justify-content:space-between;gap:12px;padding:11px 15px;border-top:1px solid var(--line);font-size:13.5px}
+.bd .item.sub{padding-left:28px;font-size:12.5px;color:var(--ink-soft)}
+.bd .item .yen{font-family:"Bebas Neue",sans-serif;font-size:16px;letter-spacing:.03em;white-space:nowrap}
+.bd .total{background:var(--navy);color:#fff;padding:13px 15px;display:flex;justify-content:space-between;align-items:baseline;font-weight:700;font-size:13.5px}
+.bd .total .yen{font-family:"Bebas Neue",sans-serif;font-size:22px}
+
+.alert{
+  background:#FFF4E8;border:1px solid #F3D2AE;border-left:4px solid var(--sun);
+  border-radius:10px;padding:13px 14px;font-size:12.5px;line-height:1.8;color:#7A4A1E;margin-bottom:14px;
+}
+.alert b{display:block;margin-bottom:3px;font-size:13px}
+.info{
+  background:#EAF4F6;border:1px solid #BFDFE4;border-left:4px solid var(--sea);
+  border-radius:10px;padding:13px 14px;font-size:12.5px;line-height:1.8;color:#1C5860;margin-bottom:14px;
+}
+.info b{display:block;margin-bottom:3px;font-size:13px}
+
+/* ---------- Checklist ---------- */
+.prog{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;margin-bottom:16px}
+.prog .top{display:flex;justify-content:space-between;font-size:13px;font-weight:900}
+.prog .bar{height:9px;background:var(--sand-2);border-radius:99px;overflow:hidden;margin-top:9px}
+.prog .bar>div{height:100%;width:0;background:linear-gradient(90deg,var(--sea),var(--sun));transition:width .3s}
+.pgroup{margin-bottom:18px}
+.pgroup h3{font-size:14px;margin:0 0 8px;font-weight:900}
+.plist{list-style:none;margin:0;padding:0;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.plist li{display:flex;align-items:center;gap:11px;padding:11px 14px;font-size:13.5px}
+.plist li+li{border-top:1px solid var(--line)}
+.plist input{width:20px;height:20px;flex:0 0 auto;accent-color:var(--sun-deep)}
+.plist label{flex:1;line-height:1.5}
+.plist label small{display:block;font-size:11.5px;color:var(--ink-soft)}
+.plist label.done{color:var(--ink-soft);text-decoration:line-through}
+.resetbtn{
+  width:100%;padding:12px;border-radius:10px;border:1px solid var(--line);background:var(--paper);
+  font-size:12.5px;color:var(--ink-soft);font-family:inherit;cursor:pointer;
+}
+
+/* ---------- Access ---------- */
+.route{position:relative;padding-left:30px}
+.route::before{content:"";position:absolute;left:8px;top:12px;bottom:12px;width:3px;background:var(--sea);border-radius:2px}
+.rstep{position:relative;padding-bottom:18px}
+.rstep:last-child{padding-bottom:0}
+.rstep::before{
+  content:"";position:absolute;left:-26px;top:3px;width:13px;height:13px;border-radius:50%;
+  background:var(--paper);border:3px solid var(--sea);
+}
+.rstep .st{font-size:14.5px;font-weight:900}
+.rstep .ln{font-size:12.5px;color:var(--ink-soft);margin-top:2px;line-height:1.7}
+.linkbtn{
+  display:block;text-align:center;background:var(--navy);color:#fff;border-radius:12px;
+  padding:14px;font-size:13.5px;font-weight:700;margin-bottom:10px;
+}
+.linkbtn.ghost{background:var(--paper);color:var(--ink);border:1px solid var(--line)}
+
+footer{text-align:center;font-size:12px;color:var(--ink-soft);padding:34px 20px 6px;line-height:1.9}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <header class="hero">
+    <div class="sun"></div>
+    <div class="eyebrow">YUIGAHAMA BEACH</div>
+    <h1>BBQ<span>DAY TRIP</span></h1>
+    <div class="jp">由比ガ浜で一日まるごとBBQ ・ 電車移動だから全員飲めます</div>
+    <div class="meta">
+      <div>6人</div>
+      <div>集合 11:00 大井町駅</div>
+      <div>解散 19:00 由比ヶ浜駅</div>
+      <div>予算 15,000円以内</div>
+    </div>
+  </header>
+
+  <nav class="tabs" id="tabs">
+    <a href="#overview" data-tab="overview">Overview</a>
+    <a href="#schedule" data-tab="schedule">スケジュール</a>
+    <a href="#cost" data-tab="cost">費用</a>
+    <a href="#items" data-tab="items">持ち物</a>
+    <a href="#access" data-tab="access">アクセス</a>
+    <a href="#rules" data-tab="rules">現地ルール</a>
+  </nav>
+
+  <main>
+
+  <!-- ============ OVERVIEW ============ -->
+  <section id="overview" class="panel">
+
+    <div class="strip">
+      <div class="row"><span class="lab">総額（6人）</span><span class="val">¥68,700</span></div>
+      <div class="row"><span class="lab">1人あたり（BBQ代 + 往復電車）</span><span class="val">¥13,470<small>目安</small></span></div>
+      <div class="row"><span class="lab">BBQ利用時間</span><span class="val">13:30 – 19:30</span></div>
+    </div>
+
+    <div class="slabel">今日の流れ</div>
+    <div class="card">
+      <p>大井町に集合して、まず肉のハナマサで食材と酒を調達。電車で由比ヶ浜へ移動し、13:30から機材設置。設置と片付けは業者がやってくれるので、こちらは食べて飲むだけ。日が傾く18時ごろから花火をして、19:00に現地解散します。</p>
+    </div>
+
+    <div class="slabel">詳しく見る</div>
+    <div class="navgrid">
+      <a class="navcard c1" href="#schedule">
+        <div class="k">SCHEDULE</div>
+        <div class="v">当日スケジュール</div>
+        <div class="d">11:00集合〜19:00解散<br>時刻ごとの動き</div>
+        <div class="arrow">→</div>
+      </a>
+      <a class="navcard c2" href="#cost">
+        <div class="k">BUDGET</div>
+        <div class="v">費用と割り勘</div>
+        <div class="d">内訳と1人あたり<br>人数を変えて計算</div>
+        <div class="arrow">→</div>
+      </a>
+      <a class="navcard c3" href="#items">
+        <div class="k">CHECKLIST</div>
+        <div class="v">持ち物リスト</div>
+        <div class="d">個人の持ち物と<br>買い出しリスト</div>
+        <div class="arrow">→</div>
+      </a>
+      <a class="navcard c4" href="#access">
+        <div class="k">ACCESS</div>
+        <div class="v">行き方</div>
+        <div class="d">大井町→由比ヶ浜<br>約70分・片道1,010円</div>
+        <div class="arrow">→</div>
+      </a>
+    </div>
+
+    <div class="slabel">決まっていること</div>
+    <div class="card">
+      <h3>移動は電車</h3>
+      <p>車を出さないので全員お酒が飲めます。そのぶん荷物は分担して持つ前提。</p>
+    </div>
+    <div class="card">
+      <h3>BBQセットはレンタル</h3>
+      <p>6人に対して10人セット（設置＋片付けつき）を3時間延長。コンロもテーブルも余裕があるので、ゆったり使えます。タープテント2張と調理セットも込み。準備と撤収の手間がないぶん、時間いっぱい遊べます。</p>
+    </div>
+    <div class="card">
+      <h3>食材は現地調達しない</h3>
+      <p>肉と酒は大井町の肉のハナマサPLUSでまとめ買い。現地のコンビニ頼みにしないので予算が読めます。</p>
+    </div>
+
+    <a class="linkbtn ghost" href="#rules">⚠ 由比ガ浜のBBQ・花火ルールを確認する</a>
+  </section>
+
+  <!-- ============ SCHEDULE ============ -->
+  <section id="schedule" class="panel">
+    <div class="slabel">当日スケジュール</div>
+
+    <div class="tl">
+      <div class="stop t-day big">
+        <div class="clock">11:00</div><div class="dot"></div>
+        <h4>大井町駅 集合</h4>
+        <div class="sub">遅れそうなときはグループに一報を。買い出しがあるので先に動き出します。</div>
+      </div>
+
+      <div class="stop t-day">
+        <div class="clock">11:10</div><div class="dot"></div>
+        <span class="tag buy">買い出し</span>
+        <h4>肉のハナマサPLUS 大井町店</h4>
+        <div class="sub">肉・酒・その他をまとめて調達。40分で回りきる想定。</div>
+        <ul>
+          <li>肉は業務用パックでまとめ買い</li>
+          <li>氷とクーラーボックス用の保冷剤を忘れずに</li>
+          <li>会計は代表がまとめて、後で精算</li>
+          <li>持ち運びは全員で分担（重いので袋は多めに）</li>
+        </ul>
+      </div>
+
+      <div class="stop t-noon">
+        <div class="clock">11:50</div><div class="dot"></div>
+        <span class="tag move">移動</span>
+        <h4>大井町駅 発</h4>
+        <div class="sub">由比ヶ浜まで約70分。乗り換えは<a href="#access" style="text-decoration:underline">アクセス</a>を参照。</div>
+      </div>
+
+      <div class="stop t-noon">
+        <div class="clock">13:00</div><div class="dot"></div>
+        <h4>由比ヶ浜駅 着</h4>
+        <div class="sub">駅から海岸までは徒歩数分。設置開始まで少し余裕があります。</div>
+      </div>
+
+      <div class="stop t-noon">
+        <div class="clock">13:30</div><div class="dot"></div>
+        <h4>由比ガ浜海岸・機材設置</h4>
+        <div class="sub">業者が設置してくれる時間。ここからレンタル時間のカウント開始。</div>
+        <ul>
+          <li>タープテント2張の位置決めをする</li>
+          <li>荷物置き場とゴミ袋の置き場を最初に決めておく</li>
+        </ul>
+      </div>
+
+      <div class="stop t-eve big">
+        <div class="clock">13:50</div><div class="dot"></div>
+        <span class="tag eat">メイン</span>
+        <h4>BBQスタート</h4>
+        <div class="sub">ここから18:00ごろまで、たっぷり4時間。飲み物は早めに冷やしておくと後がラク。</div>
+      </div>
+
+      <div class="stop t-dusk">
+        <div class="clock">18:00</div><div class="dot"></div>
+        <h4>花火スタート</h4>
+        <div class="sub">暗くなってきたら花火セットを開封。バケツに水を用意してから始めます。</div>
+        <ul>
+          <li>手持ち花火が中心。打上げ花火は避ける</li>
+          <li>燃えかすは必ず水で消してから持ち帰り</li>
+        </ul>
+      </div>
+
+      <div class="stop t-night">
+        <div class="clock">18:30</div><div class="dot"></div>
+        <span class="tag fin">撤収</span>
+        <h4>片付け</h4>
+        <div class="sub">機材の片付けは業者側。こちらは自分たちのゴミと私物をまとめます。</div>
+        <ul>
+          <li>炭とゴミは砂に埋めず必ず持ち帰り</li>
+          <li>忘れ物チェック（スマホ・上着・充電器）</li>
+        </ul>
+      </div>
+
+      <div class="stop t-night big">
+        <div class="clock">19:00</div><div class="dot"></div>
+        <h4>由比ヶ浜駅 発・解散</h4>
+        <div class="sub">おつかれさまでした。帰りも約70分・1,010円です。</div>
+      </div>
+    </div>
+
+    <div class="info">
+      <b>時間のバッファについて</b>
+      レンタルは19:30まで押さえてあるので、18:30の片付け開始は30分ほど余裕があります。花火が盛り上がったら少し延ばしても大丈夫。
+    </div>
+  </section>
+
+  <!-- ============ COST ============ -->
+  <section id="cost" class="panel">
+
+    <div class="slabel">割り勘計算</div>
+    <div class="calc">
+      <div class="stepper">
+        <span class="lb">参加人数</span>
+        <div class="ctrl">
+          <button id="minus" aria-label="人数を減らす">−</button>
+          <span class="num" id="pplNum">10</span>
+          <button id="plus" aria-label="人数を増やす">＋</button>
+        </div>
+      </div>
+      <div class="result">
+        <div class="lab">1人あたり（BBQ代 + 往復電車 2,020円）</div>
+        <div class="big" id="perPerson">¥13,470</div>
+        <div class="note" id="perNote">BBQ代 ¥11,450 ＋ 電車 ¥2,020</div>
+      </div>
+    </div>
+
+    <div class="alert">
+      <b>予算15,000円に対して</b>
+      6人だと1人あたり ¥13,470。予算15,000円まで残り ¥1,530 なので、現地での追加ドリンクや帰りの一杯を入れるとほぼ使い切ります。<br>
+      金額を下げたい場合、いちばん効くのは「お肉＋酒 ¥30,000」の見直しです。6人で3万円は1人5,000円分なので、¥20,000 に抑えれば1人あたり ¥11,800 まで下がります。BBQセットは10人セットの固定料金なので、人数を減らしても安くなりません。
+    </div>
+
+    <div class="slabel">費用の内訳</div>
+
+    <div class="bd">
+      <div class="head"><span>BBQセットレンタル</span><span class="yen">¥33,700</span></div>
+      <div class="item sub"><span>10人セット（設置＋片付けつき）×1</span><span class="yen">¥21,000</span></div>
+      <div class="item sub"><span>レンタル延長 3h</span><span class="yen">¥6,000</span></div>
+      <div class="item sub"><span>タープテント ×2</span><span class="yen">¥5,600</span></div>
+      <div class="item sub"><span>調理セット ×1</span><span class="yen">¥1,100</span></div>
+      <div class="item"><span>花火セット</span><span class="yen">¥5,000</span></div>
+      <div class="item"><span>お肉 ＋ 酒</span><span class="yen">¥30,000</span></div>
+      <div class="total"><span>合計</span><span class="yen">¥68,700</span></div>
+    </div>
+
+    <div class="alert">
+      <b>金額の食い違いメモ</b>
+      共有された総計は ¥63,700 でしたが、内訳を足すと ¥68,700 になります（差額 ¥5,000＝花火セット分）。このしおりは内訳ベースの ¥68,700 で計算しています。正しい金額が分かったら直してください。
+    </div>
+
+    <div class="slabel">交通費</div>
+    <div class="bd">
+      <div class="head"><span>大井町 ⇄ 由比ヶ浜</span><span class="yen">¥2,020</span></div>
+      <div class="item"><span>片道</span><span class="yen">¥1,010</span></div>
+      <div class="item"><span>往復（1人）</span><span class="yen">¥2,020</span></div>
+    </div>
+    <div class="card">
+      <p>交通費は各自負担の想定で計算しています。まとめて割り勘にする場合は、上の人数を変えても金額は変わらないので、別途調整してください。</p>
+    </div>
+
+    <div class="slabel">参考リンク</div>
+    <a class="linkbtn" href="https://www.bbqjp.com/kanagawa/" target="_blank" rel="noopener">BBQ出張・レンタルのページを開く →</a>
+  </section>
+
+  <!-- ============ ITEMS ============ -->
+  <section id="items" class="panel">
+    <div class="prog">
+      <div class="top"><span>チェック状況</span><span id="pct">0%</span></div>
+      <div class="bar"><div id="bar"></div></div>
+    </div>
+    <div id="listWrap"></div>
+    <button class="resetbtn" id="reset">チェックを全部リセットする</button>
+
+    <div class="info" style="margin-top:16px">
+      <b>レンタルに含まれているもの</b>
+      コンロ・炭・火起こし・テーブル・イス類は10人セットに含まれ、設置と片付けも業者がやってくれます。6人で10人セットなので、コンロもテーブルもかなり余裕があります。タープテント2張と調理セット（トング・まな板・包丁など）も手配済みなので、こちらで用意するのは食材まわりと個人の荷物だけです。
+    </div>
+  </section>
+
+  <!-- ============ ACCESS ============ -->
+  <section id="access" class="panel">
+    <div class="slabel">行き方</div>
+
+    <div class="strip">
+      <div class="row"><span class="lab">所要時間</span><span class="val">約70<small>分</small></span></div>
+      <div class="row"><span class="lab">片道運賃</span><span class="val">¥1,010</span></div>
+      <div class="row"><span class="lab">出発</span><span class="val">11:50<small>大井町</small></span></div>
+    </div>
+
+    <div class="card">
+      <h3>ルート（例）</h3>
+      <div class="route" style="margin-top:10px">
+        <div class="rstep">
+          <div class="st">大井町</div>
+          <div class="ln">JR京浜東北線で品川へ（約5分）</div>
+        </div>
+        <div class="rstep">
+          <div class="st">品川</div>
+          <div class="ln">JR横須賀線／東海道線で鎌倉方面へ（約50分）</div>
+        </div>
+        <div class="rstep">
+          <div class="st">鎌倉</div>
+          <div class="ln">江ノ島電鉄に乗り換え（約4分・2駅）</div>
+        </div>
+        <div class="rstep">
+          <div class="st">由比ヶ浜</div>
+          <div class="ln">駅から由比ガ浜海岸まで徒歩5分ほど</div>
+        </div>
+      </div>
+      <p style="margin-top:12px">※ 当日の運行状況で変わるので、乗換アプリで最新のダイヤを確認してください。休日の横須賀線は混むので、6人分の荷物を持って乗る前提で車両を選ぶと安心です。</p>
+    </div>
+
+    <div class="slabel">地図</div>
+    <a class="linkbtn" href="https://www.google.com/maps/search/%E7%94%B1%E6%AF%94%E3%82%AC%E6%B5%9C%E6%B5%B7%E5%B2%B8" target="_blank" rel="noopener">由比ガ浜海岸をGoogleマップで開く →</a>
+    <a class="linkbtn ghost" href="https://www.google.com/maps/search/%E8%82%89%E3%81%AE%E3%83%8F%E3%83%8A%E3%83%9E%E3%82%B5PLUS+%E5%A4%A7%E4%BA%95%E7%94%BA%E5%BA%97" target="_blank" rel="noopener">肉のハナマサPLUS 大井町店を開く →</a>
+
+    <div class="info">
+      <b>荷物のこと</b>
+      買い出し後は全員で荷物を分担します。保冷バッグやエコバッグを持ってきてもらえると移動がかなりラクになります。
+    </div>
+  </section>
+
+  <!-- ============ RULES ============ -->
+  <section id="rules" class="panel">
+    <div class="slabel">現地ルール</div>
+
+    <div class="alert">
+      <b>海水浴場の開設期間中はBBQ禁止エリアがあります</b>
+      鎌倉市では、例年7月1日〜8月31日の海水浴場開設期間中、由比ガ浜海岸を含む海水浴場エリア内でのバーベキューを禁止しています。日程がこの期間に入る場合は、レンタル業者にBBQ可能な場所かどうかを必ず事前確認してください。業者は許可エリアを把握しているはずなので、予約時に「由比ガ浜のどこで実施できるか」を聞いておくと確実です。
+    </div>
+
+    <div class="card">
+      <h3>火の扱い</h3>
+      <p>砂浜での直火は禁止。必ずコンロなど器具の上で行います。レンタルセットを使うぶんには問題ありません。</p>
+    </div>
+
+    <div class="card">
+      <h3>炭とゴミは持ち帰り</h3>
+      <p>使った炭や燃えかすを砂に埋めても自然には還りません。海岸に残さず、その他のゴミと一緒に必ず持ち帰ります。大きめのゴミ袋を多めに用意しておくのがおすすめ。</p>
+    </div>
+
+    <div class="card">
+      <h3>花火</h3>
+      <p>鎌倉市の条例で、夜22時から翌朝6時までは海岸などの公共の場所での打上げ花火が禁止されています。18時スタートなら時間帯は問題ありませんが、周りに人がいる海岸なので、打上げ系は避けて手持ち花火中心にするのが無難です。消火用の水は必ず用意します。</p>
+    </div>
+
+    <div class="card">
+      <h3>飲酒</h3>
+      <p>海水浴場の開設時間内は砂浜での飲酒が制限される場合があります。ここもBBQの場所と合わせて、業者に確認しておくと安心です。</p>
+    </div>
+
+    <div class="info">
+      <b>確認先</b>
+      正確な最新ルールは鎌倉市の公式ページ（「海辺でのバーベキューについて」）と、予約したレンタル業者に直接確認するのが確実です。
+    </div>
+  </section>
+
+  </main>
+
+  <footer>
+    片付けは業者まかせ、移動は電車、荷物は分担。<br>あとは食べて飲むだけです。いい一日になりますように。
+  </footer>
+</div>
+
+<script>
+/* ---------- routing ---------- */
+const panels=document.querySelectorAll('.panel');
+const tabs=document.querySelectorAll('.tabs a');
+function show(id){
+  if(!document.getElementById(id)) id='overview';
+  panels.forEach(p=>p.classList.toggle('show',p.id===id));
+  tabs.forEach(t=>t.classList.toggle('active',t.dataset.tab===id));
+  const t=document.querySelector('.tabs a.active');
+  if(t) t.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'});
+  window.scrollTo(0,0);
+}
+window.addEventListener('hashchange',()=>show(location.hash.slice(1)||'overview'));
+
+/* ---------- cost calculator ---------- */
+const TOTAL=68700, FARE=2020;
+let ppl=6;
+function renderCost(){
+  document.getElementById('pplNum').textContent=ppl;
+  const bbq=Math.ceil(TOTAL/ppl/10)*10;
+  const all=bbq+FARE;
+  document.getElementById('perPerson').textContent='¥'+all.toLocaleString();
+  document.getElementById('perNote').textContent='BBQ代 ¥'+bbq.toLocaleString()+' ＋ 電車 ¥'+FARE.toLocaleString();
+}
+document.getElementById('plus').onclick=()=>{if(ppl<30){ppl++;renderCost();}};
+document.getElementById('minus').onclick=()=>{if(ppl>1){ppl--;renderCost();}};
+
+/* ---------- checklist ---------- */
+const data=[
+ {g:'🧊 買い出しリスト（大井町で調達）',items:[
+   ['お肉','業務用パックでまとめ買い。6人×400〜500gで2.5〜3kgが目安'],
+   ['野菜','玉ねぎ・ピーマン・とうもろこし・きのこ類'],
+   ['焼きそば・おにぎりなど〆','後半にお腹にたまるものがあると満足度が上がる'],
+   ['お酒','ビール中心＋チューハイ。氷で冷やす前提で多めに'],
+   ['ソフトドリンク・水','暑い日は水が想像以上に減ります'],
+   ['氷・保冷剤',''],
+   ['タレ・塩こしょう・油',''],
+   ['紙皿・紙コップ・割り箸',''],
+   ['アルミホイル・キッチンペーパー',''],
+   ['ウェットティッシュ',''],
+   ['ゴミ袋（大・多め）','炭とゴミは持ち帰りなので必須'],
+ ]},
+ {g:'🔥 花火まわり',items:[
+   ['花火セット','手持ち中心'],
+   ['ライター・チャッカマン',''],
+   ['水を入れるバケツ','消火用。無ければ現地で代用品を確保'],
+ ]},
+ {g:'🎒 個人の持ち物',items:[
+   ['交通系ICカード','往復2,020円ぶんはチャージ済みで'],
+   ['現金','精算用に少し'],
+   ['モバイルバッテリー','1日中外なので必須'],
+   ['日焼け止め',''],
+   ['帽子・サングラス',''],
+   ['タオル',''],
+   ['羽織るもの','海辺は日が落ちると冷えます'],
+   ['サンダル or 汚れてもいい靴',''],
+   ['虫よけ',''],
+   ['ウェットティッシュ・除菌',''],
+   ['エコバッグ・保冷バッグ','荷物分担で使います'],
+   ['常備薬',''],
+ ]},
+];
+function buildList(){
+  const w=document.getElementById('listWrap');
+  w.innerHTML=data.map((g,gi)=>`
+    <div class="pgroup">
+      <h3>${g.g}</h3>
+      <ul class="plist">
+        ${g.items.map((it,ii)=>{
+          const id='k'+gi+'_'+ii;
+          return `<li><input type="checkbox" id="${id}" data-k="${id}"><label for="${id}">${it[0]}${it[1]?'<small>'+it[1]+'</small>':''}</label></li>`;
+        }).join('')}
+      </ul>
+    </div>`).join('');
+  const KEY='yuigahama_bbq_v1';
+  let saved={};
+  try{saved=JSON.parse(localStorage.getItem(KEY))||{}}catch(e){saved={}}
+  const boxes=w.querySelectorAll('input');
+  function prog(){
+    const n=[...boxes].filter(b=>b.checked).length;
+    const p=boxes.length?Math.round(n/boxes.length*100):0;
+    document.getElementById('bar').style.width=p+'%';
+    document.getElementById('pct').textContent=p+'%';
+  }
+  boxes.forEach(b=>{
+    if(saved[b.dataset.k]){b.checked=true;b.nextElementSibling.classList.add('done');}
+    b.addEventListener('change',()=>{
+      b.nextElementSibling.classList.toggle('done',b.checked);
+      saved[b.dataset.k]=b.checked;
+      try{localStorage.setItem(KEY,JSON.stringify(saved))}catch(e){}
+      prog();
+    });
+  });
+  document.getElementById('reset').onclick=()=>{
+    boxes.forEach(b=>{b.checked=false;b.nextElementSibling.classList.remove('done')});
+    saved={};
+    try{localStorage.setItem(KEY,'{}')}catch(e){}
+    prog();
+  };
+  prog();
+}
+
+show(location.hash.slice(1)||'overview');
+renderCost();
+buildList();
+</script>
+</body>
+</html>
