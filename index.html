@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>由比ガ浜BBQ 2026 | しおり</title>
 <meta name="theme-color" content="#12233F">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%20%3Cdefs%3E%3CclipPath%20id='r'%3E%3Crect%20width='64'%20height='64'%20rx='13'/%3E%3C/clipPath%3E%3C/defs%3E%20%3Cg%20clip-path='url(%23r)'%3E%20%3Crect%20width='64'%20height='64'%20fill='%2312233F'/%3E%20%3Crect%20y='30'%20width='64'%20height='34'%20fill='%238A6BC1'/%3E%20%3Ccircle%20cx='32'%20cy='29'%20r='18'%20fill='%23FF8A47'/%3E%20%3Ccircle%20cx='32'%20cy='29'%20r='13'%20fill='%23FFC77A'/%3E%20%3Cpath%20d='M0%2044c8%200%208-5%2016-5s8%205%2016%205%208-5%2016-5%208%205%2016%205v20H0z'%20fill='%2312233F'/%3E%20%3C/g%3E%20%3C/svg%3E">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="BBQしおり">
+<meta name="description" content="由比ガ浜BBQ 2泊なしの日帰りプラン。スケジュール・費用・持ち物・アクセスをまとめたしおり。">
+<meta property="og:title" content="由比ガ浜BBQ DAY TRIP">
+<meta property="og:description" content="集合11:00 大井町駅／解散19:00 由比ヶ浜駅。スケジュールと持ち物はこちら。">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -54,10 +61,12 @@ a{color:inherit;text-decoration:none}
   clip-path:polygon(0 60%,8% 40%,18% 62%,28% 38%,40% 60%,52% 36%,64% 60%,76% 38%,88% 60%,100% 42%,100% 100%,0 100%);
 }
 .hero .sun{
-  position:absolute;right:26px;top:104px;width:66px;height:66px;border-radius:50%;
+  position:absolute;right:-16px;top:22px;width:86px;height:86px;border-radius:50%;
   background:radial-gradient(circle at 35% 35%,#FFD9A0,#FF7A4D 70%);
-  box-shadow:0 0 46px rgba(255,150,90,.55);
+  box-shadow:0 0 46px rgba(255,150,90,.5);
+  z-index:0;pointer-events:none;
 }
+.hero .eyebrow,.hero h1,.hero .jp,.hero .meta{position:relative;z-index:2}
 .hero .eyebrow{
   font-family:"Bebas Neue",sans-serif;font-size:14px;letter-spacing:.34em;opacity:.8;
 }
@@ -66,7 +75,8 @@ a{color:inherit;text-decoration:none}
   font-size:52px;line-height:.92;margin:6px 0 8px;letter-spacing:.02em;
 }
 .hero h1 span{display:block;font-size:22px;letter-spacing:.16em;opacity:.9}
-.hero .jp{font-size:14px;font-weight:500;opacity:.95}
+.hero .jp{font-size:14px;font-weight:500;opacity:.95;line-height:1.75;max-width:20em}
+.hero .jp b{font-weight:500;display:inline-block}
 .hero .meta{
   display:flex;gap:8px;margin-top:16px;flex-wrap:wrap;position:relative;z-index:2;
 }
@@ -78,10 +88,17 @@ a{color:inherit;text-decoration:none}
 }
 
 /* ---------- Tabs ---------- */
-.tabs{
+.tabbar{
   position:sticky;top:0;z-index:60;background:var(--sand);
-  display:flex;gap:7px;padding:11px 14px;overflow-x:auto;
-  border-bottom:1px solid var(--line);scrollbar-width:none;
+  border-bottom:1px solid var(--line);
+}
+.tabbar::after{
+  content:"";position:absolute;right:0;top:0;bottom:1px;width:34px;pointer-events:none;
+  background:linear-gradient(to right,rgba(247,241,230,0),var(--sand) 75%);
+}
+.tabs{
+  display:flex;gap:7px;padding:11px 26px 11px 14px;overflow-x:auto;
+  scrollbar-width:none;
 }
 .tabs::-webkit-scrollbar{display:none}
 .tabs a{
@@ -97,7 +114,8 @@ main{padding:20px 16px 0}
 @keyframes fade{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
 
 .slabel{
-  font-family:"Bebas Neue",sans-serif;letter-spacing:.2em;font-size:14px;color:var(--ink-soft);
+  font-family:"Zen Kaku Gothic New",sans-serif;font-weight:900;
+  letter-spacing:.04em;font-size:13.5px;color:var(--ink-soft);
   margin:26px 0 10px;display:flex;align-items:center;gap:10px;
 }
 .slabel::after{content:"";flex:1;height:1px;background:var(--line)}
@@ -139,8 +157,21 @@ main{padding:20px 16px 0}
 /* ---------- Timeline ---------- */
 .tl{position:relative;padding-left:64px}
 .tl::before{
-  content:"";position:absolute;left:52px;top:10px;bottom:10px;width:3px;border-radius:2px;
+  content:"";position:absolute;left:56px;top:10px;bottom:10px;width:3px;border-radius:2px;
+  background:var(--line);
+}
+.tlfill{
+  position:absolute;left:56px;top:10px;bottom:10px;width:3px;border-radius:2px;
   background:linear-gradient(to bottom,var(--sea) 0%,var(--sea) 22%,var(--gold) 48%,var(--sun) 72%,var(--dusk) 90%,var(--navy) 100%);
+  clip-path:inset(0 0 100% 0);
+  will-change:clip-path;
+}
+.tlsun{
+  position:absolute;left:48.5px;width:18px;height:18px;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,#FFE9C4,#FF7A4D 74%);
+  box-shadow:0 0 18px 3px rgba(255,140,70,.65);
+  opacity:0;transition:opacity .35s ease;pointer-events:none;
+  will-change:transform;z-index:3;
 }
 .stop{position:relative;padding-bottom:22px}
 .stop:last-child{padding-bottom:6px}
@@ -241,7 +272,127 @@ main{padding:20px 16px 0}
 }
 .linkbtn.ghost{background:var(--paper);color:var(--ink);border:1px solid var(--line)}
 
+/* ===== motion ===== */
+@keyframes sunrise{from{opacity:0;transform:translateY(52px) scale(.5)}to{opacity:1;transform:none}}
+@keyframes riseIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes glow{0%,100%{box-shadow:0 0 46px rgba(255,150,90,.45)}50%{box-shadow:0 0 70px rgba(255,160,100,.7)}}
+.hero .sun{animation:sunrise 1.5s cubic-bezier(.16,.84,.44,1) both,glow 7s ease-in-out 1.5s infinite}
+.hero .eyebrow{animation:riseIn .75s .1s cubic-bezier(.16,.84,.44,1) both}
+.hero h1{animation:riseIn .75s .22s cubic-bezier(.16,.84,.44,1) both}
+.hero .jp{animation:riseIn .75s .36s cubic-bezier(.16,.84,.44,1) both}
+.hero .meta div{animation:riseIn .6s cubic-bezier(.16,.84,.44,1) both}
+.hero .meta div:nth-child(1){animation-delay:.48s}
+.hero .meta div:nth-child(2){animation-delay:.56s}
+.hero .meta div:nth-child(3){animation-delay:.64s}
+.hero .meta div:nth-child(4){animation-delay:.72s}
+
+[data-rv]{opacity:0;transform:translateY(18px);
+  transition:opacity .6s cubic-bezier(.16,.84,.44,1),transform .6s cubic-bezier(.16,.84,.44,1)}
+[data-rv].in{opacity:1;transform:none}
+.stop[data-rv] .dot{transform:scale(.2);transition:transform .5s cubic-bezier(.34,1.56,.64,1) .12s}
+.stop[data-rv].in .dot{transform:scale(1)}
+.stop[data-rv] .tag{transform:translateX(-6px);opacity:0;transition:all .45s ease .18s}
+.stop[data-rv].in .tag{transform:none;opacity:1}
+
+.navcard,.linkbtn,.tabs a,.stepper button{transition:transform .18s ease,background .18s ease,border-color .18s ease,box-shadow .18s ease}
+.navcard:active{transform:scale(.975)}
+.linkbtn:active{transform:scale(.985)}
+@media (hover:hover){
+  .navcard:hover{transform:translateY(-3px);border-color:var(--ink-soft)}
+  .linkbtn:hover{transform:translateY(-2px)}
+  .tabs a:hover{border-color:var(--ink-soft)}
+}
+.plist label{transition:color .25s ease,opacity .25s ease}
+.prog .bar>div{transition:width .5s cubic-bezier(.16,.84,.44,1)}
+.result .big{font-variant-numeric:tabular-nums}
+
 footer{text-align:center;font-size:12px;color:var(--ink-soft);padding:34px 20px 6px;line-height:1.9}
+
+/* ===== responsive ===== */
+.gridauto{display:grid;grid-template-columns:1fr;gap:0}
+.gridauto>.card,.gridauto>.bd{margin-bottom:14px}
+
+/* --- 小さい端末（〜360px） --- */
+@media (max-width:360px){
+  .hero{padding:24px 16px 30px}
+  .hero h1{font-size:42px}
+  .hero h1 span{font-size:18px}
+  .hero .sun{width:66px;height:66px;top:18px}
+  main{padding:18px 12px 0}
+  .tl{padding-left:52px}
+  .tl::before{left:44px}
+  .tlfill{left:44px}
+  .tlsun{left:36.5px}
+  .stop .clock{left:-52px;width:35px;font-size:15px}
+  .navgrid{gap:9px}
+  .navcard{padding:13px 11px}
+  .navcard .v{font-size:14px}
+  .strip .val{font-size:21px}
+  .bd .item{padding:10px 12px}
+  .result .big{font-size:32px}
+}
+
+/* --- 横向き・大きめの端末（480px〜） --- */
+@media (min-width:480px){
+  .hero h1{font-size:60px}
+  .hero h1 span{font-size:24px}
+  .hero .sun{width:104px;height:104px}
+  .navgrid{grid-template-columns:repeat(3,1fr)}
+}
+
+/* --- タブレット・PC（700px〜） --- */
+@media (min-width:700px){
+  .app{max-width:880px}
+  .hero{padding:46px 40px 52px}
+  .hero h1{font-size:76px}
+  .hero h1 span{font-size:30px}
+  .hero .jp{font-size:15.5px}
+  .hero .sun{width:130px;height:130px;top:28px;right:-24px}
+  .hero::after{height:34px}
+
+  .tabs{justify-content:center;padding:13px 20px;overflow-x:visible;flex-wrap:wrap}
+  .tabs a{font-size:13.5px;padding:9px 18px}
+  .tabbar::after{display:none}
+
+  main{padding:30px 32px 0}
+  .slabel{font-size:14px;margin:34px 0 14px}
+
+  .gridauto{grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+  .gridauto>.card,.gridauto>.bd{margin-bottom:0}
+
+  .navgrid{grid-template-columns:repeat(4,1fr);gap:14px}
+  .navcard{padding:18px 16px}
+
+  .strip{padding:20px 24px}
+  .strip .val{font-size:28px}
+
+  #listWrap{display:grid;grid-template-columns:1fr 1fr;gap:0 24px;align-items:start}
+
+  .tl{padding-left:86px}
+  .tl::before{left:78px}
+  .tlfill{left:78px}
+  .tlsun{left:70.5px}
+  .stop .clock{left:-86px;width:60px;font-size:20px}
+  .stop h4{font-size:17px}
+  .stop .sub,.stop ul{font-size:13.5px}
+
+  .result .big{font-size:44px}
+  .linkbtn{padding:16px}
+  footer{padding:44px 20px 10px;font-size:12.5px}
+}
+
+/* --- 広い画面（900px〜）：中央の列を紙面として見せる --- */
+@media (min-width:900px){
+  body{background:#EBE1CF;padding-bottom:0}
+  .app{background:var(--sand);min-height:100vh;border-left:1px solid var(--line);border-right:1px solid var(--line)}
+  .tabbar{background:var(--sand)}
+  main{padding-bottom:20px}
+  footer{padding-bottom:40px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms !important;transition-duration:.01ms !important;scroll-behavior:auto !important}
+}
 </style>
 </head>
 <body>
@@ -251,7 +402,7 @@ footer{text-align:center;font-size:12px;color:var(--ink-soft);padding:34px 20px 
     <div class="sun"></div>
     <div class="eyebrow">YUIGAHAMA BEACH</div>
     <h1>BBQ<span>DAY TRIP</span></h1>
-    <div class="jp">由比ガ浜で一日まるごとBBQ ・ 電車移動だから全員飲めます</div>
+    <div class="jp"><b>由比ガ浜で一日まるごとBBQ。</b><br><b>電車移動だから全員飲めます。</b></div>
     <div class="meta">
       <div>6人</div>
       <div>集合 11:00 大井町駅</div>
@@ -260,14 +411,14 @@ footer{text-align:center;font-size:12px;color:var(--ink-soft);padding:34px 20px 
     </div>
   </header>
 
-  <nav class="tabs" id="tabs">
+  <div class="tabbar"><nav class="tabs" id="tabs">
     <a href="#overview" data-tab="overview">Overview</a>
     <a href="#schedule" data-tab="schedule">スケジュール</a>
     <a href="#cost" data-tab="cost">費用</a>
     <a href="#items" data-tab="items">持ち物</a>
     <a href="#access" data-tab="access">アクセス</a>
     <a href="#rules" data-tab="rules">現地ルール</a>
-  </nav>
+  </nav></div>
 
   <main>
 
@@ -314,6 +465,7 @@ footer{text-align:center;font-size:12px;color:var(--ink-soft);padding:34px 20px 
     </div>
 
     <div class="slabel">決まっていること</div>
+    <div class="gridauto">
     <div class="card">
       <h3>移動は電車</h3>
       <p>車を出さないので全員お酒が飲めます。そのぶん荷物は分担して持つ前提。</p>
@@ -326,6 +478,7 @@ footer{text-align:center;font-size:12px;color:var(--ink-soft);padding:34px 20px 
       <h3>食材は現地調達しない</h3>
       <p>肉と酒は大井町の肉のハナマサPLUSでまとめ買い。現地のコンビニ頼みにしないので予算が読めます。</p>
     </div>
+    </div>
 
     <a class="linkbtn ghost" href="#rules">⚠ 由比ガ浜のBBQ・花火ルールを確認する</a>
   </section>
@@ -335,6 +488,8 @@ footer{text-align:center;font-size:12px;color:var(--ink-soft);padding:34px 20px 
     <div class="slabel">当日スケジュール</div>
 
     <div class="tl">
+      <div class="tlfill" id="tlfill"></div>
+      <div class="tlsun" id="tlsun"></div>
       <div class="stop t-day big">
         <div class="clock">11:00</div><div class="dot"></div>
         <h4>大井町駅 集合</h4>
@@ -438,12 +593,6 @@ footer{text-align:center;font-size:12px;color:var(--ink-soft);padding:34px 20px 
       </div>
     </div>
 
-    <div class="alert">
-      <b>予算15,000円に対して</b>
-      6人だと1人あたり ¥13,470。予算15,000円まで残り ¥1,530 なので、現地での追加ドリンクや帰りの一杯を入れるとほぼ使い切ります。<br>
-      金額を下げたい場合、いちばん効くのは「お肉＋酒 ¥30,000」の見直しです。6人で3万円は1人5,000円分なので、¥20,000 に抑えれば1人あたり ¥11,800 まで下がります。BBQセットは10人セットの固定料金なので、人数を減らしても安くなりません。
-    </div>
-
     <div class="slabel">費用の内訳</div>
 
     <div class="bd">
@@ -457,12 +606,8 @@ footer{text-align:center;font-size:12px;color:var(--ink-soft);padding:34px 20px 
       <div class="total"><span>合計</span><span class="yen">¥68,700</span></div>
     </div>
 
-    <div class="alert">
-      <b>金額の食い違いメモ</b>
-      共有された総計は ¥63,700 でしたが、内訳を足すと ¥68,700 になります（差額 ¥5,000＝花火セット分）。このしおりは内訳ベースの ¥68,700 で計算しています。正しい金額が分かったら直してください。
-    </div>
-
     <div class="slabel">交通費</div>
+    <div class="gridauto">
     <div class="bd">
       <div class="head"><span>大井町 ⇄ 由比ヶ浜</span><span class="yen">¥2,020</span></div>
       <div class="item"><span>片道</span><span class="yen">¥1,010</span></div>
@@ -470,6 +615,7 @@ footer{text-align:center;font-size:12px;color:var(--ink-soft);padding:34px 20px 
     </div>
     <div class="card">
       <p>交通費は各自負担の想定で計算しています。まとめて割り勘にする場合は、上の人数を変えても金額は変わらないので、別途調整してください。</p>
+    </div>
     </div>
 
     <div class="slabel">参考リンク</div>
@@ -543,6 +689,7 @@ footer{text-align:center;font-size:12px;color:var(--ink-soft);padding:34px 20px 
       鎌倉市では、例年7月1日〜8月31日の海水浴場開設期間中、由比ガ浜海岸を含む海水浴場エリア内でのバーベキューを禁止しています。日程がこの期間に入る場合は、レンタル業者にBBQ可能な場所かどうかを必ず事前確認してください。業者は許可エリアを把握しているはずなので、予約時に「由比ガ浜のどこで実施できるか」を聞いておくと確実です。
     </div>
 
+    <div class="gridauto">
     <div class="card">
       <h3>火の扱い</h3>
       <p>砂浜での直火は禁止。必ずコンロなど器具の上で行います。レンタルセットを使うぶんには問題ありません。</p>
@@ -562,6 +709,7 @@ footer{text-align:center;font-size:12px;color:var(--ink-soft);padding:34px 20px 
       <h3>飲酒</h3>
       <p>海水浴場の開設時間内は砂浜での飲酒が制限される場合があります。ここもBBQの場所と合わせて、業者に確認しておくと安心です。</p>
     </div>
+    </div>
 
     <div class="info">
       <b>確認先</b>
@@ -577,6 +725,60 @@ footer{text-align:center;font-size:12px;color:var(--ink-soft);padding:34px 20px 
 </div>
 
 <script>
+const REDUCED=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- scroll reveal ---------- */
+const RV='.slabel,.strip,.theme-card,.navcard,.card,.bd,.calc,.info,.alert,.stop,.linkbtn,.pgroup,.prog,.season,.chipwrap,.resetbtn';
+let io=null;
+if('IntersectionObserver' in window){
+  io=new IntersectionObserver((es)=>{
+    let i=0;
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.style.transitionDelay=REDUCED?'0s':(Math.min(i,5)*0.06)+'s';
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+        i++;
+      }
+    });
+  },{threshold:.06,rootMargin:'0px 0px -6% 0px'});
+}
+function reveal(panel){
+  const els=panel.querySelectorAll(RV);
+  if(!io){els.forEach(e=>e.classList.add('in'));return;}
+  els.forEach(e=>{
+    if(e.classList.contains('in'))return;
+    e.setAttribute('data-rv','');
+    io.observe(e);
+  });
+  setTimeout(()=>els.forEach(e=>e.classList.add('in')),2200);
+}
+
+/* ---------- timeline sun ---------- */
+const tl=document.querySelector('.tl');
+const tlfill=document.getElementById('tlfill');
+const tlsun=document.getElementById('tlsun');
+let ticking=false;
+function trackSun(){
+  const sch=document.getElementById('schedule');
+  if(!tl||!sch.classList.contains('show'))return;
+  const r=tl.getBoundingClientRect();
+  const anchor=window.innerHeight*0.52;
+  let p=(anchor-r.top)/r.height;
+  p=Math.max(0,Math.min(1,p));
+  tlfill.style.clipPath='inset(0 0 '+((1-p)*100).toFixed(2)+'% 0)';
+  const track=tl.offsetHeight-20;
+  tlsun.style.transform='translateY('+(10+p*track-9).toFixed(1)+'px)';
+  tlsun.style.opacity=(p>0.005&&p<0.995)?'1':'0';
+}
+function onScroll(){
+  if(ticking)return;
+  ticking=true;
+  requestAnimationFrame(()=>{trackSun();ticking=false;});
+}
+window.addEventListener('scroll',onScroll,{passive:true});
+window.addEventListener('resize',onScroll,{passive:true});
+
 /* ---------- routing ---------- */
 const panels=document.querySelectorAll('.panel');
 const tabs=document.querySelectorAll('.tabs a');
@@ -587,21 +789,44 @@ function show(id){
   const t=document.querySelector('.tabs a.active');
   if(t) t.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'});
   window.scrollTo(0,0);
+  const p=document.getElementById(id);
+  reveal(p);
+  if(id==='schedule'){tlfill.style.clipPath='inset(0 0 100% 0)';requestAnimationFrame(trackSun);}
+  if(id==='cost') animateCost();
 }
 window.addEventListener('hashchange',()=>show(location.hash.slice(1)||'overview'));
 
 /* ---------- cost calculator ---------- */
 const TOTAL=68700, FARE=2020;
-let ppl=6;
-function renderCost(){
+let ppl=6, countRAF=null;
+function countUp(el,from,to,ms){
+  if(REDUCED||from===to){el.textContent='¥'+to.toLocaleString();return;}
+  const t0=performance.now();
+  cancelAnimationFrame(countRAF);
+  (function step(now){
+    const k=Math.min((now-t0)/ms,1);
+    const e=1-Math.pow(1-k,3);
+    el.textContent='¥'+Math.round(from+(to-from)*e).toLocaleString();
+    if(k<1) countRAF=requestAnimationFrame(step);
+  })(t0);
+}
+function renderCost(animate){
   document.getElementById('pplNum').textContent=ppl;
   const bbq=Math.ceil(TOTAL/ppl/10)*10;
   const all=bbq+FARE;
-  document.getElementById('perPerson').textContent='¥'+all.toLocaleString();
+  const el=document.getElementById('perPerson');
+  const prev=parseInt((el.textContent||'').replace(/[^0-9]/g,''),10)||0;
+  if(animate) countUp(el,prev,all,650);
+  else el.textContent='¥'+all.toLocaleString();
   document.getElementById('perNote').textContent='BBQ代 ¥'+bbq.toLocaleString()+' ＋ 電車 ¥'+FARE.toLocaleString();
 }
-document.getElementById('plus').onclick=()=>{if(ppl<30){ppl++;renderCost();}};
-document.getElementById('minus').onclick=()=>{if(ppl>1){ppl--;renderCost();}};
+function animateCost(){
+  const el=document.getElementById('perPerson');
+  const bbq=Math.ceil(TOTAL/ppl/10)*10;
+  countUp(el,0,bbq+FARE,900);
+}
+document.getElementById('plus').onclick=()=>{if(ppl<30){ppl++;renderCost(true);}};
+document.getElementById('minus').onclick=()=>{if(ppl>1){ppl--;renderCost(true);}};
 
 /* ---------- checklist ---------- */
 const data=[
@@ -678,9 +903,9 @@ function buildList(){
   prog();
 }
 
-show(location.hash.slice(1)||'overview');
-renderCost();
+renderCost(false);
 buildList();
+show(location.hash.slice(1)||'overview');
 </script>
 </body>
 </html>
