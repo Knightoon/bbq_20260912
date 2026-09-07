@@ -272,6 +272,18 @@ main{padding:20px 16px 0}
 }
 .linkbtn.ghost{background:var(--paper);color:var(--ink);border:1px solid var(--line)}
 
+.speclist{list-style:none;margin:0;padding:0}
+.speclist li{display:flex;justify-content:space-between;gap:10px;align-items:baseline;
+  padding:7px 0;border-bottom:1px dashed var(--line);font-size:13px;color:var(--ink-soft)}
+.speclist li:last-child{border-bottom:none}
+.speclist li b{font-family:"Bebas Neue",sans-serif;font-size:14px;letter-spacing:.04em;
+  color:var(--ink);white-space:nowrap}
+
+.speclist li.hl{color:var(--ink)}
+.speclist li.hl b{color:var(--sun-deep)}
+.speclist small{display:block;font-size:11px;color:var(--sun-deep);margin-top:2px}
+.bd .item small{font-size:11px}
+
 /* ===== motion ===== */
 @keyframes sunrise{from{opacity:0;transform:translateY(52px) scale(.5)}to{opacity:1;transform:none}}
 @keyframes riseIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
@@ -426,8 +438,8 @@ footer{text-align:center;font-size:12px;color:var(--ink-soft);padding:34px 20px 
   <section id="overview" class="panel">
 
     <div class="strip">
-      <div class="row"><span class="lab">総額（6人）</span><span class="val">¥78,700</span></div>
-      <div class="row"><span class="lab">1人あたり（BBQ代 + 往復電車）</span><span class="val">¥15,140<small>目安</small></span></div>
+      <div class="row"><span class="lab">総額（6人）</span><span class="val">¥75,200</span></div>
+      <div class="row"><span class="lab">1人あたり（BBQ代 + 往復電車）</span><span class="val">¥14,560<small>目安</small></span></div>
       <div class="row"><span class="lab">BBQ利用時間</span><span class="val">13:30 – 19:30</span></div>
     </div>
 
@@ -472,7 +484,7 @@ footer{text-align:center;font-size:12px;color:var(--ink-soft);padding:34px 20px 
     </div>
     <div class="card">
       <h3>BBQセットはレンタル</h3>
-      <p>6人に対して10人セット（設置＋片付けつき）を3時間延長。コンロもテーブルも余裕があるので、ゆったり使えます。タープテント2張、包丁まな板セット、氷入りクーラーBOXも込み。準備と撤収の手間がないぶん、時間いっぱい遊べます。</p>
+      <p>6人に対して10人セット（設置＋片付けつき）を3時間延長。コンロもテーブルも余裕があります。タープテントは追加して計2張、ほかに包丁まな板セットと氷入りクーラーBOXも手配済み。準備と撤収の手間がないぶん、時間いっぱい遊べます。</p>
     </div>
     <div class="card">
       <h3>食材は現地調達しない</h3>
@@ -588,23 +600,23 @@ footer{text-align:center;font-size:12px;color:var(--ink-soft);padding:34px 20px 
       </div>
       <div class="result">
         <div class="lab">1人あたり（BBQ代 + 往復電車 2,020円）</div>
-        <div class="big" id="perPerson">¥15,140</div>
-        <div class="note" id="perNote">BBQ代 ¥13,120 ＋ 電車 ¥2,020</div>
+        <div class="big" id="perPerson">¥14,560</div>
+        <div class="note" id="perNote">BBQ代 ¥12,540 ＋ 電車 ¥2,020</div>
       </div>
     </div>
 
     <div class="slabel">費用の内訳</div>
 
     <div class="bd">
-      <div class="head"><span>BBQセットレンタル（満福）</span><span class="yen">¥43,700</span></div>
+      <div class="head"><span>BBQセットレンタル（満福）</span><span class="yen">¥40,200</span></div>
       <div class="item sub"><span>器材レンタル10人セット（設置＋片付けつき）</span><span class="yen">¥25,800</span></div>
       <div class="item sub"><span>レンタル延長 3h（¥3,000 × 3）</span><span class="yen">¥9,000</span></div>
-      <div class="item sub"><span>タープテント ×2（¥3,500 × 2）</span><span class="yen">¥7,000</span></div>
+      <div class="item sub"><span>タープテント 追加1張<br><small style="color:var(--ink-soft)">セットの1張と合わせて計2張</small></span><span class="yen">¥3,500</span></div>
       <div class="item sub"><span>クーラーBOX（氷付き）</span><span class="yen">¥1,500</span></div>
       <div class="item sub"><span>包丁まな板セット</span><span class="yen">¥400</span></div>
       <div class="item"><span>花火セット</span><span class="yen">¥5,000</span></div>
       <div class="item"><span>お肉 ＋ 酒</span><span class="yen">¥30,000</span></div>
-      <div class="total"><span>合計</span><span class="yen">¥78,700</span></div>
+      <div class="total"><span>合計</span><span class="yen">¥75,200</span></div>
     </div>
 
     <div class="slabel">交通費</div>
@@ -632,9 +644,35 @@ footer{text-align:center;font-size:12px;color:var(--ink-soft);padding:34px 20px 
     <div id="listWrap"></div>
     <button class="resetbtn" id="reset">チェックを全部リセットする</button>
 
-    <div class="info" style="margin-top:16px">
-      <b>レンタルに含まれているもの</b>
-      コンロ・炭・火起こし・テーブル・イス類は10人セットに含まれ、設置と片付けも業者がやってくれます。6人で10人セットなので、コンロもテーブルもかなり余裕があります。タープテント2張、包丁まな板セット、氷入りクーラーBOXも手配済みなので、こちらで用意するのは食材まわりと個人の荷物だけです。
+    <div class="slabel">レンタルに含まれるもの（持っていかなくてOK）</div>
+    <div class="gridauto">
+      <div class="card">
+        <h3><span class="em">📦</span>10人セットの内容</h3>
+        <ul class="speclist">
+          <li class="hl"><span>タープテント（2.5m×2.5m）<small>＋追加1張で合計2張</small></span><b>1張</b></li>
+          <li><span>アウトドアチェアー</span><b>10脚</b></li>
+          <li><span>テーブル（120×60cm）</span><b>2台</b></li>
+          <li><span>バーベキューコンロ（70×30cm）</span><b>1台</b></li>
+          <li><span>クーラーBOX</span><b>1台</b></li>
+          <li><span>使い捨て焼き網</span><b>1枚</b></li>
+          <li><span>焼きそばプレート</span><b>1枚</b></li>
+          <li><span>食材用トング</span><b>2本</b></li>
+          <li><span>炭</span><b>5kg</b></li>
+          <li><span>炭ばさみ</span><b>1本</b></li>
+          <li><span>ゴミ袋（可燃）</span><b>1枚</b></li>
+          <li><span>ゴミ袋（不燃）</span><b>1枚</b></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3><span class="em">➕</span>追加した分</h3>
+        <ul class="speclist">
+          <li class="hl"><span>タープテント（追加）<small>これでタープは合計2張</small></span><b>1張</b></li>
+          <li><span>クーラーBOX（氷付き）</span><b>1台</b></li>
+          <li><span>包丁まな板セット</span><b>1式</b></li>
+          <li><span>レンタル延長</span><b>3時間</b></li>
+        </ul>
+        <p style="margin-top:10px"><b>タープテントはセットの1張＋追加1張＝合計2張</b>です。設置と片付けは業者がやってくれます。</p>
+      </div>
     </div>
   </section>
 
@@ -798,7 +836,7 @@ function show(id){
 window.addEventListener('hashchange',()=>show(location.hash.slice(1)||'overview'));
 
 /* ---------- cost calculator ---------- */
-const TOTAL=78700, FARE=2020;
+const TOTAL=75200, FARE=2020;
 let ppl=6, countRAF=null;
 function countUp(el,from,to,ms){
   if(REDUCED||from===to){el.textContent='¥'+to.toLocaleString();return;}
@@ -839,10 +877,10 @@ const data=[
    ['ソフトドリンク・水','暑い日は水が想像以上に減ります'],
    ['追加の氷・保冷剤','氷入りクーラーBOXはレンタルに含まれるので、足りなそうな場合のみ'],
    ['タレ・塩こしょう・油',''],
-   ['紙皿・紙コップ・割り箸',''],
+   ['紙皿・紙コップ・割り箸','レンタルに食器類は含まれません'],
    ['アルミホイル・キッチンペーパー',''],
    ['ウェットティッシュ',''],
-   ['ゴミ袋（大・多め）','炭とゴミは持ち帰りなので必須'],
+   ['ゴミ袋（大・多め）','セットには可燃・不燃が1枚ずつのみ。持ち帰り分は追加で'],
  ]},
  {g:'🔥 花火まわり',items:[
    ['花火セット','手持ち中心'],
