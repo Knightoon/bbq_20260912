@@ -438,8 +438,8 @@ footer{text-align:center;font-size:12px;color:var(--ink-soft);padding:34px 20px 
   <section id="overview" class="panel">
 
     <div class="strip">
-      <div class="row"><span class="lab">総額（6人）</span><span class="val">¥75,200</span></div>
-      <div class="row"><span class="lab">1人あたり（BBQ代 + 往復電車）</span><span class="val">¥14,560<small>目安</small></span></div>
+      <div class="row"><span class="lab">総額（6人）</span><span class="val">¥72,200</span></div>
+      <div class="row"><span class="lab">1人あたり（BBQ代 + 往復電車）</span><span class="val">¥14,060<small>目安</small></span></div>
       <div class="row"><span class="lab">BBQ利用時間</span><span class="val">13:30 – 19:30</span></div>
     </div>
 
@@ -484,7 +484,7 @@ footer{text-align:center;font-size:12px;color:var(--ink-soft);padding:34px 20px 
     </div>
     <div class="card">
       <h3>BBQセットはレンタル</h3>
-      <p>6人に対して10人セット（設置＋片付けつき）を3時間延長。コンロもテーブルも余裕があります。タープテントは追加して計2張、ほかに包丁まな板セットと氷入りクーラーBOXも手配済み。準備と撤収の手間がないぶん、時間いっぱい遊べます。</p>
+      <p>6人に対して10人セット（設置＋片付けつき）を2時間延長。コンロもテーブルも余裕があります。タープテントは追加して計2張、ほかに包丁まな板セットと氷入りクーラーBOXも手配済み。準備と撤収の手間がないぶん、時間いっぱい遊べます。</p>
     </div>
     <div class="card">
       <h3>食材は現地調達しない</h3>
@@ -600,23 +600,23 @@ footer{text-align:center;font-size:12px;color:var(--ink-soft);padding:34px 20px 
       </div>
       <div class="result">
         <div class="lab">1人あたり（BBQ代 + 往復電車 2,020円）</div>
-        <div class="big" id="perPerson">¥14,560</div>
-        <div class="note" id="perNote">BBQ代 ¥12,540 ＋ 電車 ¥2,020</div>
+        <div class="big" id="perPerson">¥14,060</div>
+        <div class="note" id="perNote">BBQ代 ¥12,040 ＋ 電車 ¥2,020</div>
       </div>
     </div>
 
     <div class="slabel">費用の内訳</div>
 
     <div class="bd">
-      <div class="head"><span>BBQセットレンタル（満福）</span><span class="yen">¥40,200</span></div>
+      <div class="head"><span>BBQセットレンタル（満福）</span><span class="yen">¥37,200</span></div>
       <div class="item sub"><span>器材レンタル10人セット（設置＋片付けつき）</span><span class="yen">¥25,800</span></div>
-      <div class="item sub"><span>レンタル延長 3h（¥3,000 × 3）</span><span class="yen">¥9,000</span></div>
+      <div class="item sub"><span>レンタル延長 2h（¥3,000 × 2）</span><span class="yen">¥6,000</span></div>
       <div class="item sub"><span>タープテント 追加1張<br><small style="color:var(--ink-soft)">セットの1張と合わせて計2張</small></span><span class="yen">¥3,500</span></div>
       <div class="item sub"><span>クーラーBOX（氷付き）</span><span class="yen">¥1,500</span></div>
       <div class="item sub"><span>包丁まな板セット</span><span class="yen">¥400</span></div>
       <div class="item"><span>花火セット</span><span class="yen">¥5,000</span></div>
       <div class="item"><span>お肉 ＋ 酒</span><span class="yen">¥30,000</span></div>
-      <div class="total"><span>合計</span><span class="yen">¥75,200</span></div>
+      <div class="total"><span>合計</span><span class="yen">¥72,200</span></div>
     </div>
 
     <div class="slabel">交通費</div>
@@ -669,7 +669,7 @@ footer{text-align:center;font-size:12px;color:var(--ink-soft);padding:34px 20px 
           <li class="hl"><span>タープテント（追加）<small>これでタープは合計2張</small></span><b>1張</b></li>
           <li><span>クーラーBOX（氷付き）</span><b>1台</b></li>
           <li><span>包丁まな板セット</span><b>1式</b></li>
-          <li><span>レンタル延長</span><b>3時間</b></li>
+          <li><span>レンタル延長</span><b>2時間</b></li>
         </ul>
         <p style="margin-top:10px"><b>タープテントはセットの1張＋追加1張＝合計2張</b>です。設置と片付けは業者がやってくれます。</p>
       </div>
@@ -836,7 +836,7 @@ function show(id){
 window.addEventListener('hashchange',()=>show(location.hash.slice(1)||'overview'));
 
 /* ---------- cost calculator ---------- */
-const TOTAL=75200, FARE=2020;
+const TOTAL=72200, FARE=2020;
 let ppl=6, countRAF=null;
 function countUp(el,from,to,ms){
   if(REDUCED||from===to){el.textContent='¥'+to.toLocaleString();return;}
